@@ -1,0 +1,7 @@
+README.md
+setup.py
+dygnn/__init__.py
+dygnn.egg-info/PKG-INFO
+dygnn.egg-info/SOURCES.txt
+dygnn.egg-info/dependency_links.txt
+dygnn.egg-info/top_level.txt
