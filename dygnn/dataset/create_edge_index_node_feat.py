@@ -1,5 +1,6 @@
 """Module to create the matrix with the node features and the new dataframe with the needed columns."""
 
+import argparse
 from pathlib import Path
 
 import numpy as np
@@ -10,7 +11,7 @@ FILE_PATH = Path("dygnn/dataset/processed_data") / "citations.csv"
 OUT_FOLDER = Path("dygnn/DyGLib/processed_data/citations")
 
 
-def main():
+def main(n_col):
     # Open the edge index file
     print(f"Reading the edge index from {FILE_PATH}...")
     assert FILE_PATH.exists(), f"{FILE_PATH} does not exist!"
@@ -43,7 +44,6 @@ def main():
     print("Creating the matrix with the node features...")
     unique_values = np.unique(np.concatenate((final_df["u"], final_df["i"])))
     n_rows = unique_values.shape[0]
-    n_col = 172
     nodes_features = np.zeros((n_rows, n_col))
     print("Done!")
     print(f"Nodes features shape: {nodes_features.shape}")
@@ -57,4 +57,16 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Create matrix with node features and new dataframe"
+    )
+    parser.add_argument(
+        "--n_col",
+        type=int,
+        default=172,
+        help="Number of columns for the node features matrix",
+    )
+
+    args = parser.parse_args()
+
+    main(args.n_col)
