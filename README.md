@@ -67,11 +67,39 @@ tar -xvf dygnn/DyGLib/processed_data/citations.tar.gz -C dygnn/DyGLib/processed_
 
 ## Usage
 
-You can run the full pipeline to preprocess the data using different parameters from the default one:
+This project has three main steps: data preprocessing, model training, and evaluation. You can run all steps or skip some if you have preprocessed data or pre-trained weights.
 
+### 1. Data Preprocessing
+- **Script**: `run_data_preprocessing.sh`
+- **Description**: Processes raw data and generates features.
+  
 ```bash
-bash run_data_pipeline.sh
+bash run_data_preprocessing.sh
 ```
 
-To have information about the parameters that you can change use the `--help` flag.
+### 2. Model Training
+- **Script**: `run_train_link_prediction.sh`
+- **Description**: Trains the model on preprocessed data.
+
+```bash
+bash run_train_link_prediction.sh
+```
+
+### 3. Model Evaluation
+- **Script**: `run_evaluate_link_prediction.sh`
+- **Description**: Evaluates the model's performance.
+
+```bash
+bash run_evaluate_link_prediction.sh
+```
+
+### Customizing Parameters
+
+Each script can be customized by passing arguments. Use the `--help` flag for more information on available options:
+
+```bash 
+bash run_data_preprocessing.sh --help
+bash run_train_link_prediction.sh --help
+bash run_evaluate_link_prediction.sh --help
+```
 
