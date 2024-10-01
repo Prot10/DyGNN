@@ -15,7 +15,25 @@ The AMiner Citation Network Dataset is a comprehensive collection of academic pa
 - **Version**: 14
 - **Source**: [AMiner](https://www.aminer.cn/citation)
 - **Contents**: Academic papers with metadata (title, authors, year, venue, etc.) and citation relationships
-- **Size**: Large-scale dataset (exact size may vary)
+- **Size**: Large-scale dataset ($\approx 15 GB$.)
+
+### Visualizations
+
+The following visualizations provide insights into the dataset:
+
+<div style="display: flex; justify-content: space-around;">
+
+  <div style="margin-right: 20px;">
+    <strong>Number of Papers per Year</strong>  
+    <img src="images/number_of_papers_per_year.png" alt="Number of Papers per Year" style="max-width: 300px;"/>
+  </div>
+
+  <div>
+    <strong>Word Cloud for 2022</strong>  
+    <img src="images/wordcloud_2022.png" alt="Word Cloud 2022" style="max-width: 300px;"/>
+  </div>
+
+</div>
 
 ## Installation
 
