@@ -1,3 +1,14 @@
 Metadata-Version: 2.1
 Name: dygnn
 Version: 0.1.0
+Requires-Python: >=3.11
+Requires-Dist: ijson==3.3.0
+Requires-Dist: numpy==2.1.1
+Requires-Dist: pandas==2.2.3
+Requires-Dist: pyarrow==17.0.0
+Requires-Dist: scikit_learn==1.5.2
+Requires-Dist: sentence_transformers==3.1.1
+Requires-Dist: tabulate==0.9.0
+Requires-Dist: torch==2.4.1
+Requires-Dist: tqdm==4.66.5
+Requires-Dist: gdown==5.2.0
