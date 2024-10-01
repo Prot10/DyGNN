@@ -1,5 +1,6 @@
 """Module to create the edge index from the dataset."""
 
+import argparse
 from pathlib import Path
 
 import numpy as np
@@ -9,10 +10,9 @@ from sentence_transformers import SentenceTransformer
 
 FILE_PATH = Path("dygnn/dataset/processed_data") / "citation.csv"
 OUT_FOLDER = Path("dygnn/DyGLib/processed_data/citations")
-N_COMPONENTS = 170
 
 
-def main():
+def main(n_components):
     # Open the edge index file
     print(f"Reading the edge index from {FILE_PATH}...")
     assert FILE_PATH.exists(), f"{FILE_PATH} does not exist!"
@@ -33,7 +33,7 @@ def main():
 
     # Apply the TruncatedSVD to the embeddings
     print("Performing dimensionality reduction...")
-    embeddings = dim_reduction(X=embeddings, n_components=N_COMPONENTS)
+    embeddings = dim_reduction(X=embeddings, n_components=n_components)
     print("Done!")
     print(f"Embeddings shape: {embeddings.shape}\n")
 
@@ -52,4 +52,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Create edge index from dataset")
+    parser.add_argument(
+        "--n_components",
+        type=int,
+        default=170,
+        help="Number of components for dimensionality reduction",
+    )
+
+    args = parser.parse_args()
+
+    main(args.n_components)
