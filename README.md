@@ -82,7 +82,7 @@ bash run_data_preprocessing.sh
 - **Description**: Trains the model on preprocessed data.
 
 ```bash
-bash run_train_link_prediction.sh
+bash run_train_citations.sh
 ```
 
 ### 3. Model Evaluation
@@ -90,7 +90,7 @@ bash run_train_link_prediction.sh
 - **Description**: Evaluates the model's performance.
 
 ```bash
-bash run_evaluate_link_prediction.sh
+bash run_evaluate_citations.sh
 ```
 
 ### Customizing Parameters
