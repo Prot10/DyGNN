@@ -12,12 +12,15 @@ from dataset.utils import (
     save_csv_chunked,
 )
 
+FILE_PATH = Path("dygnn/dataset/raw_data") / "dblp_v14.json"
+OUT_FOLDER = Path("dygnn/dataset/processed_data")
 
-def main(file_path, out_folder, n, year_start):
+
+def main(n, year_start):
     # Extract keys from the file to create the initial dataframe
-    print(f"Creating the initial dataframe from {file_path}...")
-    assert file_path.exists(), f"{file_path} does not exist!"
-    df = extract_keys(file_path=file_path, N=n, year_start=year_start)
+    print(f"Creating the initial dataframe from {FILE_PATH}...")
+    assert FILE_PATH.exists(), f"{FILE_PATH} does not exist!"
+    df = extract_keys(file_path=FILE_PATH, N=n, year_start=year_start)
     print("Done!")
     print(f"Dataframe shape: {df.shape}")
     print(f"Dataframe columns: {df.columns}\n")
@@ -41,30 +44,18 @@ def main(file_path, out_folder, n, year_start):
 
     # Save the edge index, mapping names and mapping years
     print("Saving the edge index, mapping names and mapping years...")
-    out_folder.mkdir(parents=True, exist_ok=True)
-    save_csv_chunked(df=edge_index, file_path=out_folder / "citations.csv")
-    with open(out_folder / "mapping_names.pkl", "wb") as f:
+    OUT_FOLDER.mkdir(parents=True, exist_ok=True)
+    save_csv_chunked(df=edge_index, file_path=OUT_FOLDER / "citations.csv")
+    with open(OUT_FOLDER / "mapping_names.pkl", "wb") as f:
         pickle.dump(mapping_names, f)
-    with open(out_folder / "mapping_years.pkl", "wb") as f:
+    with open(OUT_FOLDER / "mapping_years.pkl", "wb") as f:
         pickle.dump(mapping_years, f)
     print("Done!")
-    print(f"Files saved in: {out_folder}")
+    print(f"Files saved in: {OUT_FOLDER}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Create edge index from raw data")
-    parser.add_argument(
-        "--file_path",
-        type=Path,
-        default=Path("dygnn/dataset/raw_data") / "dblp_v14.json",
-        help="Path to the input JSON file",
-    )
-    parser.add_argument(
-        "--out_folder",
-        type=Path,
-        default=Path("dygnn/dataset/processed_data"),
-        help="Path to the output folder",
-    )
     parser.add_argument(
         "--n", type=int, default=10000000, help="Number of entries to process"
     )
@@ -74,4 +65,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    main(args.file_path, args.out_folder, args.n, args.year_start)
+    main(args.n, args.year_start)
