@@ -66,3 +66,12 @@ tar -xvf dygnn/DyGLib/processed_data/citations.tar.gz -C dygnn/DyGLib/processed_
 ```
 
 ## Usage
+
+You can run the full pipeline to preprocess the data using different parameters from the default one:
+
+```bash
+bash run_data_pipeline.sh
+```
+
+To have information about the parameters that you can change use the `--help` flag.
+

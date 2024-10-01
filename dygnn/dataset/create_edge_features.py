@@ -5,10 +5,11 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from dataset.utils import dim_reduction, get_text_embeddings, read_csv_chunked
 from sentence_transformers import SentenceTransformer
 
-FILE_PATH = Path("dygnn/dataset/processed_data") / "citation.csv"
+from dygnn.dataset.utils import dim_reduction, get_text_embeddings, read_csv_chunked
+
+FILE_PATH = Path("dygnn/dataset/processed_data") / "citations.csv"
 OUT_FOLDER = Path("dygnn/DyGLib/processed_data/citations")
 
 

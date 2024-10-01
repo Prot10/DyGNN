@@ -4,7 +4,7 @@ import argparse
 import pickle
 from pathlib import Path
 
-from dataset.utils import (
+from dygnn.dataset.utils import (
     create_years_subset,
     extract_keys,
     get_edge_index,

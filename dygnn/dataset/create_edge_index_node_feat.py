@@ -5,7 +5,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from dataset.utils import read_csv_chunked, save_csv_chunked
+
+from dygnn.dataset.utils import read_csv_chunked, save_csv_chunked
 
 FILE_PATH = Path("dygnn/dataset/processed_data") / "citations.csv"
 OUT_FOLDER = Path("dygnn/DyGLib/processed_data/citations")

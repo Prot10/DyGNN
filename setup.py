@@ -10,7 +10,7 @@ setup(
     name="dygnn",
     version="0.1.0",
     packages=find_packages(),
-    package_data={"cafein": ["py.typed"]},
+    package_data={"dygnn": ["py.typed"]},
     python_requires=">=3.11",
     install_requires=required,
 )
