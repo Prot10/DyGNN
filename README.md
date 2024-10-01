@@ -21,16 +21,16 @@ The AMiner Citation Network Dataset is a comprehensive collection of academic pa
 
 The following visualizations provide insights into the dataset:
 
-<div style="display: flex; justify-content: space-around;">
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
 
-  <div style="margin-right: 20px;">
-    <strong>Number of Papers per Year</strong>  
-    <img src="images/number_of_papers_per_year.png" alt="Number of Papers per Year" style="max-width: 300px;"/>
+  <div style="text-align: center;">
+    <strong>- Number of Papers per Year</strong><br>
+    <img src="images/number_of_papers_per_year.png" alt="Number of Papers per Year" style="max-width: 200px; height: auto;"/>
   </div>
 
-  <div>
-    <strong>Word Cloud for 2022</strong>  
-    <img src="images/wordcloud_2022.png" alt="Word Cloud 2022" style="max-width: 300px;"/>
+  <div style="text-align: center;">
+    <strong>- Word Cloud for 2022</strong><br>
+    <img src="images/wordcloud_2022.png" alt="Word Cloud 2022" style="max-width: 200px; height: auto;"/>
   </div>
 
 </div>
