@@ -263,4 +263,4 @@ The following graphs highlight the performance of the models over five epochs:
 | TGAT | 4.211.780 | 0.7842 | 0.7693 |
 | GraphMixer | 2.570.004 | 0.7435 | 0.7306 |
 
-- **DyGFormer** outperforms both TGAT and GraphMixer in terms of average precision and AUC ROC, showing better overall performance despite having a comparable number of parameters to TGAT.
+**DyGFormer** outperforms both TGAT and GraphMixer in terms of average precision and AUC ROC, showing better overall performance despite having a comparable number of parameters to TGAT.
