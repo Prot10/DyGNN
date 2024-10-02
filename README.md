@@ -30,7 +30,7 @@ The following visualizations provide insights into the dataset:
   </div>
 
   <div style="text-align: center;">
-    <strong>- Word Cloud for 2022</strong><br>
+    <strong>- Word Cloud Animation (2010-2023)</strong><br>
     <img src="images/wordcloud_animation.gif" alt="Word Cloud Animation" style="max-width: 200px; height: auto;"/>
   </div>
 
