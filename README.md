@@ -176,3 +176,59 @@ Developed and trained various Temporal Graph Neural Networks (GNNs) using the co
 #### 10. Evaluation of Link Predictions
 
 Conducted comprehensive evaluations of the link prediction models, focusing on performance metrics such as accuracy, precision, recall, and F1 score. Comparative analyses were performed to assess the strengths and weaknesses of each model, providing insights into their effectiveness in predicting potential collaborations within the citation network.
+
+## Results
+
+Three state-of-the-art dynamic graph neural network models were trained and evaluated: DyGFormer, TGAT, and GraphMixer. The focus was on assessing their performance on the processed academic citation dataset in link prediction tasks.
+
+### 1. Model Architecture Details:
+
+- **DyGFormer:**
+  
+  DyGFormer utilizes a transformer-based architecture for dynamic graph representation learning, employing a novel temporal attention mechanism to capture dynamic graph structures.
+  
+  Core methods:
+  1. Node representation update:
+     $$h_v^{(l)} = \text{FFN}(\text{MHA}(h_v^{(l-1)}, H_{\mathcal{N}(v)}^{(l-1)}))$$
+  
+  2. Temporal attention:
+     $$\alpha_{ij} = \text{softmax}\left(\frac{Q_i K_j^T}{\sqrt{d_k}} + M_{ij}\right)$$
+  
+  Where $$h_v^{(l)}$$ represents the node representation at layer $$l$$, FFN is a feed-forward network, MHA is multi-head attention, and $$M_{ij}$$ is a mask for temporal order.
+
+- **TGAT:**
+  
+  TGAT introduces temporal graph attention networks that incorporate time encoding into the graph attention mechanism to handle dynamic graphs.
+  
+  Core methods:
+  1. Time encoding:
+     $$\Phi(t) = [\sin(\omega_1 t), \cos(\omega_1 t), ..., \sin(\omega_d t), \cos(\omega_d t)]$$
+  
+  2. Attention mechanism:
+     $$z_i = \sigma\left(\sum_{j \in \mathcal{N}_i} \alpha_{ij} W h_j\right)$$
+  
+  3. Attention coefficients:
+     $$\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_{k \in \mathcal{N}_i} \exp(e_{ik})}$$
+  
+  Where $$z_i$$ is the output embedding, $$\alpha_{ij}$$ are attention coefficients, and $$\Phi(t)$$ is the time encoding function.
+
+- **GraphMixer:**
+  
+  GraphMixer employs a mixer-based architecture for graph representation learning, utilizing MLP layers for both channel and token mixing in graph data.
+  
+  Core methods:
+  1. Channel-mixing:
+     $$Y = \text{MLP}_c(\text{LN}(X)) + X$$
+  
+  2. Token-mixing:
+     $$Y = \text{MLP}_t(\text{LN}(X^T))^T + X$$
+  
+  Where X is the input feature matrix, LN denotes layer normalization, and $$\text{MLP}_c$$ and $$\text{MLP}_t$$ are channel and token mixing MLPs respectively.
+
+### 2. Results Comparison:
+
+| Model | # Parameters | Average Precision | AUC ROC |
+|-------|--------------|-------------------|---------|
+| DyGFormer | 4.446.940 | 0.9599 | 0.9537 |
+| TGAT | 4.211.780 | 0.9384 | 0.9361 |
+| GraphMixer | 2.570.004 |  |  |
