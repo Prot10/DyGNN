@@ -227,8 +227,17 @@ Three state-of-the-art dynamic graph neural network models were trained and eval
 
 ### 2. Results Comparison:
 
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
+
+  <div style="text-align: center;">
+    <strong>- Train and Validation Results</strong><br>
+    <img src="images/model_comparison.png" alt="Train and Validation Results" style="max-width: 200px; height: auto;"/>
+  </div>
+
+</div>
+
 | Model | # Parameters | Average Precision | AUC ROC |
 |-------|--------------|-------------------|---------|
-| DyGFormer | 4.446.940 | 0.9599 | 0.9537 |
-| TGAT | 4.211.780 | 0.9384 | 0.9361 |
-| GraphMixer | 2.570.004 |  |  |
+| DyGFormer | 4.446.940 | 0.8379 | 0.8021 |
+| TGAT | 4.211.780 | 0.7842 | 0.7693 |
+| GraphMixer | 2.570.004 | 0.7435 | 0.7306 |
