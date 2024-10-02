@@ -227,6 +227,26 @@ Three state-of-the-art dynamic graph neural network models were trained and eval
 
 ### 2. Results Comparison:
 
+Performance comparison of three models: DyGFormer, TGAT, and GraphMixer. The comparison focuses on their behavior across training and validation phases, considering metrics such as loss, average precision, and AUC ROC. 
+
+### Training and Validation Results:
+
+The following graphs highlight the performance of the models over five epochs:
+
+1. **Train Loss**: 
+   - DyGFormer achieves the lowest training loss, converging quickly after the first epoch, while TGAT and GraphMixer exhibit slightly higher and more fluctuating losses.
+   
+2. **Validation Loss**: 
+   - Similarly, DyGFormer shows better generalization with the lowest validation loss compared to TGAT and GraphMixer, which have consistently higher validation losses.
+
+3. **Train Average Precision**: 
+   - DyGFormer maintains a higher average precision during training, outperforming TGAT and GraphMixer across all epochs.
+
+4. **Validate Average Precision**: 
+   - In the validation phase, DyGFormer also outperforms the other models, consistently showing superior precision values.
+
+---
+
 <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
 
   <div style="text-align: center;">
@@ -236,8 +256,12 @@ Three state-of-the-art dynamic graph neural network models were trained and eval
 
 </div>
 
+### New Node Test Metrics:
+
 | Model | # Parameters | Average Precision | AUC ROC |
 |-------|--------------|-------------------|---------|
 | DyGFormer | 4.446.940 | 0.8379 | 0.8021 |
 | TGAT | 4.211.780 | 0.7842 | 0.7693 |
 | GraphMixer | 2.570.004 | 0.7435 | 0.7306 |
+
+- **DyGFormer** outperforms both TGAT and GraphMixer in terms of average precision and AUC ROC, showing better overall performance despite having a comparable number of parameters to TGAT.
