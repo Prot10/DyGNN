@@ -8,6 +8,7 @@ This repository uses the library proposed in the paper [Towards Better Dynamic G
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Description](#project-description)
+- [Results](#results)
 
 ## Dataset
 
@@ -225,7 +226,7 @@ Three state-of-the-art dynamic graph neural network models were trained and eval
   
   Where X is the input feature matrix, LN denotes layer normalization, and $$\text{MLP}_c$$ and $$\text{MLP}_t$$ are channel and token mixing MLPs respectively.
 
-### 2. Results Comparison:
+### 2. Comparison:
 
 Performance comparison of three models: DyGFormer, TGAT, and GraphMixer. The comparison focuses on their behavior across training and validation phases, considering metrics such as loss, average precision, and AUC ROC. 
 
@@ -244,8 +245,6 @@ The following graphs highlight the performance of the models over five epochs:
 
 4. **Validate Average Precision**: 
    - In the validation phase, DyGFormer also outperforms the other models, consistently showing superior precision values.
-
----
 
 <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
 
