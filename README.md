@@ -140,7 +140,7 @@ Extracted author details (IDs, names, organizations) from nested structures in t
 #### 2. Data Filtering and Organization:
 
 Filtered the extracted data based on publication year and organized it into a pandas DataFrame for easier manipulation.
-Created subsets of data for each publication year, facilitating year-wise analysis.
+Created subsets of data for each publication year, making easier year-wise analysis.
 
 #### 3. Edge Index Creation:
 
@@ -149,34 +149,22 @@ Mapped document types and citation counts to numerical representations for furth
 
 #### 4. Normalization and Mapping:
 
-Developed a normalization procedure for citation counts using z-score normalization to prepare the data for machine learning.
+Normalized citation counts.
 Created mappings from author names and years to unique integers for efficient processing and storage.
 
 #### 5. Dimensionality Reduction:
 
 Employed Truncated Singular Value Decomposition (SVD) to reduce the dimensionality of text embeddings generated from the citation texts using a pre-trained Sentence-BERT model.
-Generated text embeddings to capture the semantic meaning of citation texts for use in machine learning models.
+Generated text embeddings to capture the semantic meaning of citation texts.
 
-#### 6. Data Saving:
-
-Implemented functions to save processed DataFrames and NumPy arrays into CSV and .npy file formats in a structured directory, ensuring that processed data is easily accessible for future use.
-
-#### 7. Node Features Creation:
+#### 6. Node Features Creation:
 
 Created a new DataFrame with a structured representation of the edge index, facilitating downstream tasks such as training machine learning models or graph analyses.
 Constructed a node feature matrix for authors, where each author is represented by a vector that captures their properties.
 
-#### 8. Command-Line Interface:
+#### 7. Command-Line Interface:
 
-Developed a command-line interface (CLI) for executing the processing scripts, allowing for easy specification of parameters like the number of components for dimensionality reduction and the number of columns for the node features matrix.
-
-#### 9. Dynamic GNN Training
-
-Developed and trained various Temporal Graph Neural Networks (GNNs) using the constructed dataset. The training process involved optimizing hyperparameters to enhance model performance in link prediction tasks. Different architectures were explored to determine the most effective approach for predicting collaborations among authors based on citation relationships.
-
-#### 10. Evaluation of Link Predictions
-
-Conducted comprehensive evaluations of the link prediction models, focusing on performance metrics such as accuracy, precision, recall, and F1 score. Comparative analyses were performed to assess the strengths and weaknesses of each model, providing insights into their effectiveness in predicting potential collaborations within the citation network.
+Created bash files for executing the processing scripts, allowing for easy specification of parameters like the number of components for dimensionality reduction and the number of columns for the node features matrix.
 
 ## Results
 
@@ -263,4 +251,4 @@ The following graphs highlight the performance of the models over five epochs:
 | TGAT | 4.211.780 | 0.7842 | 0.7693 |
 | GraphMixer | 2.570.004 | 0.7435 | 0.7306 |
 
-**DyGFormer** outperforms both TGAT and GraphMixer in terms of average precision and AUC ROC, showing better overall performance despite having a comparable number of parameters to TGAT.
+**DyGFormer** outperforms both TGAT and GraphMixer in terms of average precision and AUC ROC, showing better overall performance despite having a number of parameters comparable to TGAT.
