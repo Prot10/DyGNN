@@ -174,7 +174,7 @@ Three state-of-the-art dynamic graph neural network models were trained and eval
 
 - **DyGFormer:**
   
-  DyGFormer utilizes a transformer-based architecture for dynamic graph representation learning, employing a novel temporal attention mechanism to capture dynamic graph structures.
+  [DyGFormer](https://arxiv.org/pdf/2303.13047) utilizes a transformer-based architecture for dynamic graph representation learning, employing a novel temporal attention mechanism to capture dynamic graph structures.
   
   Core methods:
   1. Node representation update:
@@ -187,7 +187,7 @@ Three state-of-the-art dynamic graph neural network models were trained and eval
 
 - **TGAT:**
   
-  TGAT introduces temporal graph attention networks that incorporate time encoding into the graph attention mechanism to handle dynamic graphs.
+  [TGAT](https://arxiv.org/pdf/2002.07962) introduces temporal graph attention networks that incorporate time encoding into the graph attention mechanism to handle dynamic graphs.
   
   Core methods:
   1. Time encoding:
@@ -203,7 +203,7 @@ Three state-of-the-art dynamic graph neural network models were trained and eval
 
 - **GraphMixer:**
   
-  GraphMixer employs a mixer-based architecture for graph representation learning, utilizing MLP layers for both channel and token mixing in graph data.
+  [GraphMixer](https://arxiv.org/pdf/2302.11636) employs a mixer-based architecture for graph representation learning, utilizing MLP layers for both channel and token mixing in graph data.
   
   Core methods:
   1. Channel-mixing:
